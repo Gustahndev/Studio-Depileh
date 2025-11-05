@@ -1,0 +1,1054 @@
+ <section class="section gallery-section" id="galeria">
+        <div class="container">
+            <h2>Nossos Trabalhos</h2>
+            <p class="section-subtitle">Veja algumas das nossas criações e transformações em beleza</p>
+            
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-slide">
+                        <img src="fotos/Imagem do WhatsApp de 2025-10-16 à(s) 00.58.28_05cfad55.jpg" alt="Manicure Premium">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="fotos/Imagem do WhatsApp de 2025-10-16 à(s) 00.58.28_7f058f7a.jpg" alt="Pedicure Luxo">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="fotos/Imagem do WhatsApp de 2025-10-16 à(s) 00.58.28_17ad574e.jpg" alt="Nail Art">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="fotos/Imagem do WhatsApp de 2025-10-16 à(s) 00.58.34_45aef073.jpg" alt="Gel Nails">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="fotos/Imagem do WhatsApp de 2025-10-16 à(s) 00.58.34_aeb3e548.jpg" alt="Alongamento">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="fotos/Imagem do WhatsApp de 2025-10-16 à(s) 00.58.32_29609b26.jpg" alt="Unhas Decoradas">
+                    </div>
+                </div>
+
+                <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+
+                <div class="carousel-controls" id="carouselControls"></div>
+            </div>
+
+            <div class="gallery-info">
+                <p>Deslize para ver mais dos nossos trabalhos ou clique nos botões</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section container" id="sobre"><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Depileh - Manicure & Beleza Premium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #d946a6 0%, #ec4899 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(217, 70, 166, 0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            width: 10px;
+            height: 300px;
+            margin-bottom: 1.5rem;
+            margin-left: 20px;
+            position: 50%;
+            size: 2000px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #be185d;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #d946a6 0%, #ec4899 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(217, 70, 166, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(217, 70, 166, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #ec4899;
+            border: 2px solid #ec4899;
+        }
+
+        .btn-secondary:hover {
+            background: #fce7f3;
+        }
+
+        .container {
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section h2 {
+            font-size: 2.8rem;
+            color: #be185d;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #d946a6, #ec4899);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(217, 70, 166, 0.25);
+            border-color: #fce7f3;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-card h3 {
+            color: #d946a6;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-card .price {
+            color: #ec4899;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card .btn {
+            padding: 0.7rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .about-section {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            color: #d946a6;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+            font-weight: 600;
+        }
+
+        .about-content h2 {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            margin-left: 1rem;
+        }
+
+        .about-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            margin-left: 1rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .feature-item h4 {
+            color: #d946a6;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #d946a6 0%, #ec4899 100%);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            margin-right: 1rem;
+        }
+
+        .testimonials {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+        }
+
+        .testimonials h2 {
+            color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(236, 72, 153, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-card p {
+            color: #e5e7eb;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #ec4899;
+        }
+
+        .contact-section {
+            background: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-box {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(217, 70, 166, 0.15);
+        }
+
+        .info-box h3 {
+            color: #d946a6;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .info-box p {
+            color: #666;
+            font-weight: 500;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: #ec4899;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        .gallery-section {
+            background: white;
+            position: relative;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 10px auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(217, 70, 166, 0.25);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #d946a6 0%, #ec4899 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-slide.emoji-slide {
+            font-size: 6rem;
+        }
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-slide > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.8rem;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .carousel-dot.active {
+            background: white;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .carousel-btn.prev {
+            left: 1.5rem;
+        }
+
+        .carousel-btn.next {
+            right: 1.5rem;
+        }
+
+        .gallery-info {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .gallery-info p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .form-container {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #be185d;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #fce7f3;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ec4899;
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .rating-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .star-input {
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .star-input:hover,
+        .star-input.active {
+            color: #fbbf24;
+            transform: scale(1.2);
+        }
+
+        .submit-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .submit-group button {
+            flex: 1;
+        }
+
+        .success-message {
+            display: none;
+            background: #dcfce7;
+            color: #166534;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            border: 2px solid #86efac;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+                font-size: 4rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">𝓢𝓽𝓾𝓭𝓲𝓸 𝓓𝓮𝓹𝓲𝓵𝓮𝓱</div>
+            <ul>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-img"> <img src="c:\Users\gusta\OneDrive\Área de Trabalho\Faculdade\ENIAC\Projeto Web (Site de Manicure e Beleza)\Imagem do WhatsApp de 2025-10-16 à(s) 00.58.31_e53afdd7.jpg"></div>
+            <h1>Sua Beleza em Primeiro Lugar</h1>
+            <p>Unhas impecáveis, tratamentos premium e muito mais para você brilhar</p>
+            <button class="btn" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Agende Agora</button>
+        </div>
+    </section>
+
+    <section class="section container" id="sobre">
+        <div class="about-section">
+            <div class="about-content">
+                <h3>SOBRE STUDIO DEPILEH</h3>
+                <h2>Excelência em Beleza desde 2024</h2>
+                <p>O Studio Depileh é um estúdio de beleza dedicado a oferecer os melhores serviços de manicure, pedicure e tratamentos de beleza. Nossa equipe é altamente treinada e utiliza os produtos mais premium do mercado.</p>
+                <p>Com mais de 1 ano de experiência, já atendemos vários clientes satisfeitas que confiam em nosso trabalho de qualidade.</p>
+                
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">🏆</div>
+                        <div>
+                            <h4>Qualidade Premium</h4>
+                            <p>Produtos e técnicas de classe mundial</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <div>
+                            <h4>Profissionais Certificados</h4>
+                            <p>Equipe altamente qualificada e atualizada</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💎</div>
+                        <div>
+                            <h4>Ambiente Luxuoso</h4>
+                            <p>Espaço aconchegante e relaxante</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⏱️</div>
+                        <div>
+                            <h4>Atendimento Rápido</h4>
+                            <p>Agendamento flexível e pontualidade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-image"><img src="fotos/Depileh (1).png"></div>
+        </div>
+    </section>
+
+    <section class="section container" id="servicos">
+        <h2>Nossos Serviços</h2>
+        <p class="section-subtitle">Descubra nossa variedade de tratamentos especializados para deixá-la ainda mais linda</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💅</div>
+                <h3>Mão e Pé</h3>
+                <p>Tratamento completo das mãos com limpeza, hidratação e esmaltação de alta qualidade</p>
+                <div class="price">R$ 60</div>
+                <button class="btn btn-secondary" onclick="alert('Serviço adicionado ao carrinho!')">Agendar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🦶</div>
+                <h3>Pedicure Premium</h3>
+                <p>Tratamento completo dos pés com esfoliação, hidratação intensiva e esmaltação de longa duração</p>
+                <div class="price">R$ 50</div>
+                <button class="btn btn-secondary" onclick="alert('Serviço adicionado ao carrinho!')">Agendar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Gel de Longa Duração</h3>
+                <p>Esmaltação em gel com tecnologia avançada que dura até 3 semanas sem descascar</p>
+                <div class="price">R$ 70</div>
+                <button class="btn btn-secondary" onclick="alert('Serviço adicionado ao carrinho!')">Agendar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💎</div>
+                <h3>Alongamento de Unhas</h3>
+                <p>Alongamento profissional com fibra de vidro, acrílico ou polygel - escolha sua técnica</p>
+                <div class="price">R$ 90</div>
+                <button class="btn btn-secondary" onclick="alert('Serviço adicionado ao carrinho!')">Agendar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Nail Art Exclusiva</h3>
+                <p>Designs personalizados e criações únicas com detalhes sofisticados para suas unhas</p>
+                <div class="price">R$ 65</div>
+                <button class="btn btn-secondary" onclick="alert('Serviço adicionado ao carrinho!')">Agendar</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🧖</div>
+                <h3>Massagem & Reflexologia</h3>
+                <p>Massagem relaxante nos pés e mãos com técnicas terapêuticas para total bem-estar</p>
+                <div class="price">R$ 60</div>
+                <button class="btn btn-secondary" onclick="alert('Serviço adicionado ao carrinho!')">Agendar</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials" id="depoimentos">
+        <div class="container">
+            <h2>Depoimentos de Nossas Clientes</h2>
+            <p class="section-subtitle">Veja o que as mulheres que confiam em nós têm a dizer</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Adorei o atendimento! A manicurista foi extremamente cuidadosa, atenta aos detalhes e as unhas ficaram absolutamente perfeitas. O ambiente é muito aconchegante. Voltarei com certeza!"</p>
+                    <div class="testimonial-author">— Marina Silva</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Melhor salão de beleza que encontrei! Ambiente limpo, profissional, acolhedor e as meninas são super atenciosas e atenciosidade. Recomendo para todas as amigas. É meu lugar favorito!"</p>
+                    <div class="testimonial-author">— Juliana Costa</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"O gel dura muito mesmo! Ficou maravilhoso e mantém a qualidade por semanas sem nem um sinal de descascamento. Vale muito a pena investir neste serviço aqui!"</p>
+                    <div class="testimonial-author">— Beatriz Santos</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Fiz o alongamento de unhas e o resultado superou minhas expectativas. Ficou tão natural e lindo! As manicurisas conhecem muito sobre a profissão."</p>
+                    <div class="testimonial-author">— Carolina Oliveira</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"A Nail Art que a equipe criou para mim foi incrível! Personalizaram totalmente conforme meus desejos e o resultado foi de tirar o fôlego. Muito criativas!"</p>
+                    <div class="testimonial-author">— Patricia Mendes</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Recomendo de olhos fechados! Profissionalismo, higiene, qualidade e preço justo. Encontrei meu salão de beleza para a vida toda. Muito obrigada!"</p>
+                    <div class="testimonial-author">— Fernanda Rocha</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-section" id="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p class="section-subtitle">Visite-nos ou agende seu horário através dos nossos canais de comunicação</p>
+            <div class="contact-info">
+                <div class="info-box">
+                    <h3>📞 Telefone</h3>
+                    <p>(11) 99540-6320<br></p>
+                </div>
+                <div class="info-box">
+                    <h3>📍 Localização</h3>
+                    <p>Rua Dona Maria Quitéria, 87<br>Guarulhos - SP</p>
+                </div>
+                <div class="info-box">
+                    <h3>🕒 Horário</h3>
+                    <p>Seg-Sex: 9h às 19h<br>Sábado: 9h às 18h</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a class="btn" href="https://api.whatsapp.com/send/?phone=5511995406320&text=Marque+o+seu+dia+e+seu+hor%C3%A1rio&type=phone_number&app_absent=0" target="_blank" rel="noreferrer noopener">Conversar no WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Studio Depileh - Manicure & Beleza Premium. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/depileh/" target="_blank" rel="noreferrer noopener">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        let currentRating = 0;
+        let currentSlide = 0;
+        let autoPlayInterval;
+        const totalSlides = 6;
+
+        // Carousel functions
+        function initCarousel() {
+            createCarouselDots();
+            startAutoPlay();
+            updateCarousel();
+        }
+
+        function createCarouselDots() {
+            const controlsContainer = document.getElementById('carouselControls');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(i);
+                controlsContainer.appendChild(dot);
+            }
+        }
+
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+            resetAutoPlay();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+            resetAutoPlay();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+            resetAutoPlay();
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                nextSlide();
+            }, 4000); // Muda de foto a cada 4 segundos
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        // Testimonial functions
+        function setRating(stars) {
+            currentRating = stars;
+            document.getElementById('rating').value = stars;
+            const starElements = document.querySelectorAll('.star-input');
+            starElements.forEach((star, index) => {
+                if (index < stars) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        function submitTestimonial(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const rating = document.getElementById('rating').value;
+            const message = document.getElementById('message').value;
+
+            if (rating === '0') {
+                alert('Por favor, selecione uma avaliação!');
+                return;
+            }
+
+            // Simular envio (em um sistema real, isso seria enviado para um servidor)
+            const testimonial = {
+                name,
+                email,
+                service,
+                rating,
+                message,
+                date: new Date().toLocaleDateString('pt-BR')
+            };
+
+            console.log('Depoimento enviado:', testimonial);
+
+            // Mostrar mensagem de sucesso
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+
+            // Limpar formulário
+            document.getElementById('testimonialForm').reset();
+            setRating(0);
+
+            // Esconder mensagem após 3 segundos
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 3000);
+        }
+
+        // Inicializar carrossel quando a página carregar
+        window.addEventListener('load', initCarousel);
+    </script>
+</body>
+</html>
