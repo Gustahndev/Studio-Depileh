@@ -693,6 +693,55 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* --- Fade In ao rolar --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Brilho suave no título --- */
+.title-glow {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    transition: text-shadow .3s;
+}
+.title-glow:hover {
+    text-shadow: 0 0 15px rgba(255, 192, 255, 0.7);
+}
+
+/* --- Botão com brilho correndo --- */
+.btn-shine {
+    position: relative;
+    padding: 12px 28px;
+    border-radius: 8px;
+    background: #ff4f9a;
+    border: none;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+.btn-shine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -70px;
+    height: 100%;
+    width: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    transform: skewX(-20deg);
+    transition: 0.6s;
+}
+
+.btn-shine:hover::before {
+    left: 120%;
+}
+
     </style>
 </head>
 <body>
@@ -709,14 +758,22 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-img"> <img src=""></div>
-            <h1>Sua Beleza em Primeiro Lugar</h1>
-            <p>Unhas impecáveis, tratamentos premium e muito mais para você brilhar</p>
-            <button class="btn" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">Agende Agora</button>
+    <section class="hero fade-in">
+    <div class="hero-content">
+        <div class="hero-img"> 
+            <img src="">
         </div>
-    </section>
+
+        <h1 class="title-glow">Sua Beleza em Primeiro Lugar</h1>
+
+        <p>Unhas impecáveis, tratamentos premium e muito mais para você brilhar</p>
+
+        <button class="btn btn-shine"
+        onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+            Agende Agora
+        </button>
+    </div>
+</section>
 
     <section class="section container" id="sobre">
         <div class="about-section">
@@ -1047,8 +1104,28 @@
 
         // Inicializar carrossel quando a página carregar
         window.addEventListener('load', initCarousel);
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll('.fade-in');
+
+    function checkVisibility() {
+        items.forEach(el => {
+            const rect = el.getBoundingClientRect().top;
+            if (rect < window.innerHeight - 50) {
+                el.classList.add('show');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
+});
+</script>
+
+        
     </script>
 </body>
 </html>
+
 
 
