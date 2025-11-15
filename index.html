@@ -66,6 +66,7 @@
             transition: all 0.3s;
             font-weight: 500;
             position: relative;
+            cursor: pointer;
         }
 
         nav a::after {
@@ -156,10 +157,6 @@
             max-width: 2000px;
             margin: 0 auto;
             padding: 0 2rem;
-        }
-
-        .section {
-            padding: 6rem 0;
         }
 
         .section h2 {
@@ -688,7 +685,6 @@
             font-size: 1rem;
         }
 
-        /* --- Fade In ao rolar --- */
         .fade-in {
             opacity: 0;
             transform: translateY(25px);
@@ -699,7 +695,6 @@
             transform: translateY(0);
         }
 
-        /* --- Brilho suave no título --- */
         .title-glow {
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
             transition: text-shadow .3s;
@@ -708,7 +703,6 @@
             text-shadow: 0 0 15px rgba(255, 192, 255, 0.7);
         }
 
-        /* --- Botão com brilho correndo --- */
         .btn-shine {
             position: relative;
             padding: 1rem 2.5rem;
@@ -800,8 +794,7 @@
         <div class="hero-content">
             <h1 class="title-glow">Sua Beleza em Primeiro Lugar</h1>
             <p>Unhas impecáveis, tratamentos premium e muito mais para você brilhar</p>
-            <button class="btn btn-shine"
-            onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+            <button class="btn btn-shine" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
                 Agende Agora
             </button>
         </div>
@@ -1098,18 +1091,11 @@
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
                 
                 if (targetElement) {
-                    const headerOffset = 80;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
@@ -1124,6 +1110,7 @@
     </script>
 </body>
 </html>
+
 
 
 
