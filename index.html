@@ -82,15 +82,6 @@
             overflow: hidden;
         }
 
-        .hero-img {
-            width: 10px;
-            height: 300px;
-            margin-bottom: 1.5rem;
-            margin-left: 20px;
-            position: 50%;
-            size: 2000px;
-        }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -323,6 +314,13 @@
             justify-content: center;
             font-size: 6rem;
             margin-right: 1rem;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .testimonials {
@@ -460,7 +458,7 @@
 
         .carousel-slide {
             min-width: 100%;
-            height: 900px;
+            height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -562,104 +560,61 @@
             font-size: 1rem;
         }
 
-        .form-container {
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
-            padding: 2rem;
-            border-radius: 20px;
-            max-width: 600px;
-            margin: 0 auto;
+        /* --- Fade In ao rolar --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
+        /* --- Brilho suave no título --- */
+        .title-glow {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+            transition: text-shadow .3s;
+        }
+        .title-glow:hover {
+            text-shadow: 0 0 15px rgba(255, 192, 255, 0.7);
         }
 
-        .form-group label {
-            display: block;
-            color: #be185d;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #fce7f3;
-            border-radius: 10px;
-            font-family: 'Poppins', sans-serif;
+        /* --- Botão com brilho correndo --- */
+        .btn-shine {
+            position: relative;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #d946a6 0%, #ec4899 100%);
+            border: none;
+            color: white;
+            cursor: pointer;
+            overflow: hidden;
             font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 8px 25px rgba(217, 70, 166, 0.3);
             transition: all 0.3s;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #ec4899;
-            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+        .btn-shine::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -70px;
+            height: 100%;
+            width: 50px;
+            background: rgba(255, 255, 255, 0.5);
+            transform: skewX(-20deg);
+            transition: 0.6s;
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
+        .btn-shine:hover::before {
+            left: 120%;
         }
 
-        .rating-group {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-
-        .star-input {
-            font-size: 2rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .star-input:hover,
-        .star-input.active {
-            color: #fbbf24;
-            transform: scale(1.2);
-        }
-
-        .submit-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .submit-group button {
-            flex: 1;
-        }
-
-        .success-message {
-            display: none;
-            background: #dcfce7;
-            color: #166534;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            font-weight: 600;
-            border: 2px solid #86efac;
-        }
-
-        .success-message.show {
-            display: block;
-            animation: slideDown 0.3s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .btn-shine:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(217, 70, 166, 0.5);
         }
 
         @media (max-width: 768px) {
@@ -692,56 +647,11 @@
             .about-features {
                 grid-template-columns: 1fr;
             }
+
+            .carousel-slide {
+                height: 400px;
+            }
         }
-        /* --- Fade In ao rolar --- */
-.fade-in {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity .8s ease, transform .8s ease;
-}
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* --- Brilho suave no título --- */
-.title-glow {
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-    transition: text-shadow .3s;
-}
-.title-glow:hover {
-    text-shadow: 0 0 15px rgba(255, 192, 255, 0.7);
-}
-
-/* --- Botão com brilho correndo --- */
-.btn-shine {
-    position: relative;
-    padding: 12px 28px;
-    border-radius: 8px;
-    background: #ff4f9a;
-    border: none;
-    color: white;
-    cursor: pointer;
-    overflow: hidden;
-    font-size: 18px;
-}
-
-.btn-shine::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -70px;
-    height: 100%;
-    width: 50px;
-    background: rgba(255, 255, 255, 0.5);
-    transform: skewX(-20deg);
-    transition: 0.6s;
-}
-
-.btn-shine:hover::before {
-    left: 120%;
-}
-
     </style>
 </head>
 <body>
@@ -759,21 +669,15 @@
     </header>
 
     <section class="hero fade-in">
-    <div class="hero-content">
-        <div class="hero-img"> 
-            <img src="">
+        <div class="hero-content">
+            <h1 class="title-glow">Sua Beleza em Primeiro Lugar</h1>
+            <p>Unhas impecáveis, tratamentos premium e muito mais para você brilhar</p>
+            <button class="btn btn-shine"
+            onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+                Agende Agora
+            </button>
         </div>
-
-        <h1 class="title-glow">Sua Beleza em Primeiro Lugar</h1>
-
-        <p>Unhas impecáveis, tratamentos premium e muito mais para você brilhar</p>
-
-        <button class="btn btn-shine"
-        onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
-            Agende Agora
-        </button>
-    </div>
-</section>
+    </section>
 
     <section class="section container" id="sobre">
         <div class="about-section">
@@ -815,10 +719,13 @@
                 </div>
             </div>
 
-            <div class="about-image"><img src="fotos/Depileh (1).png"></div>
+            <div class="about-image">
+                <img src="fotos/Depileh (1).png" alt="Studio Depileh">
+            </div>
         </div>
     </section>
-<section class="section gallery-section" id="galeria">
+
+    <section class="section gallery-section" id="galeria">
         <div class="container">
             <h2>Nossos Trabalhos</h2>
             <p class="section-subtitle">Veja algumas das nossas criações e transformações em beleza</p>
@@ -856,6 +763,7 @@
             </div>
         </div>
     </section>
+
     <section class="section container" id="servicos">
         <h2>Nossos Serviços</h2>
         <p class="section-subtitle">Descubra nossa variedade de tratamentos especializados para deixá-la ainda mais linda</p>
@@ -987,7 +895,6 @@
     </footer>
 
     <script>
-        let currentRating = 0;
         let currentSlide = 0;
         let autoPlayInterval;
         const totalSlides = 6;
@@ -1040,7 +947,7 @@
         function startAutoPlay() {
             autoPlayInterval = setInterval(() => {
                 nextSlide();
-            }, 4000); // Muda de foto a cada 4 segundos
+            }, 4000);
         }
 
         function resetAutoPlay() {
@@ -1048,84 +955,28 @@
             startAutoPlay();
         }
 
-        // Testimonial functions
-        function setRating(stars) {
-            currentRating = stars;
-            document.getElementById('rating').value = stars;
-            const starElements = document.querySelectorAll('.star-input');
-            starElements.forEach((star, index) => {
-                if (index < stars) {
-                    star.classList.add('active');
-                } else {
-                    star.classList.remove('active');
+        // Fade in animation on scroll
+        function checkVisibility() {
+            const items = document.querySelectorAll('.fade-in');
+            items.forEach(el => {
+                const rect = el.getBoundingClientRect().top;
+                if (rect < window.innerHeight - 50) {
+                    el.classList.add('show');
                 }
             });
         }
 
-        function submitTestimonial(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-            const rating = document.getElementById('rating').value;
-            const message = document.getElementById('message').value;
-
-            if (rating === '0') {
-                alert('Por favor, selecione uma avaliação!');
-                return;
-            }
-
-            // Simular envio (em um sistema real, isso seria enviado para um servidor)
-            const testimonial = {
-                name,
-                email,
-                service,
-                rating,
-                message,
-                date: new Date().toLocaleDateString('pt-BR')
-            };
-
-            console.log('Depoimento enviado:', testimonial);
-
-            // Mostrar mensagem de sucesso
-            const successMsg = document.getElementById('successMessage');
-            successMsg.classList.add('show');
-
-            // Limpar formulário
-            document.getElementById('testimonialForm').reset();
-            setRating(0);
-
-            // Esconder mensagem após 3 segundos
-            setTimeout(() => {
-                successMsg.classList.remove('show');
-            }, 3000);
-        }
-
-        // Inicializar carrossel quando a página carregar
-        window.addEventListener('load', initCarousel);
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const items = document.querySelectorAll('.fade-in');
-
-    function checkVisibility() {
-        items.forEach(el => {
-            const rect = el.getBoundingClientRect().top;
-            if (rect < window.innerHeight - 50) {
-                el.classList.add('show');
-            }
+        // Initialize
+        window.addEventListener('load', () => {
+            initCarousel();
+            checkVisibility();
         });
-    }
-
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility();
-});
-</script>
-
         
+        window.addEventListener('scroll', checkVisibility);
     </script>
 </body>
 </html>
+
 
 
 
