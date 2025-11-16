@@ -30,6 +30,29 @@
 
         .section {
             padding: 6rem 0;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(253, 242, 248, 0.5), transparent);
+            pointer-events: none;
+        }
+
+        .section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, rgba(253, 242, 248, 0.5), transparent);
+            pointer-events: none;
         }
 
         #servicos, #sobre, #galeria, #depoimentos, #contato {
@@ -162,9 +185,99 @@
         .section h2 {
             font-size: 2.8rem;
             color: #be185d;
-            margin-bottom: 1rem;
+            margin-bottom: 2.5rem;
             text-align: center;
             font-weight: 800;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            animation: titleEntrance 1s ease-out;
+            background: linear-gradient(45deg, #be185d, #ec4899, #d946a6, #be185d);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite, titleEntrance 1s ease-out;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes titleEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section h2::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #d946a6, #ec4899, #d946a6);
+            border-radius: 2px;
+            animation: lineExpand 0.8s ease-out 0.3s both, pulse 2s ease-in-out 1s infinite;
+        }
+
+        @keyframes lineExpand {
+            0% {
+                width: 0;
+                opacity: 0;
+            }
+            100% {
+                width: 80px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translateX(-50%) scaleX(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(-50%) scaleX(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        .section h2::after {
+            content: '✨';
+            position: absolute;
+            right: calc(50% - 150px);
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: sparkle 2s ease-in-out 0.5s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1.2) rotate(180deg);
+            }
         }
 
         .section-subtitle {
@@ -273,13 +386,14 @@
         }
 
         .about-section {
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            background: transparent;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            padding: 0;
         }
 
         .about-section::before {
@@ -307,7 +421,7 @@
             color: #d946a6;
             font-size: 2rem;
             margin-bottom: 1rem;
-            margin-left: 1rem;
+            margin-left: 0;
             font-weight: 600;
             opacity: 0;
             animation: slideInLeft 0.8s ease-out forwards;
@@ -327,7 +441,7 @@
         .about-content h2 {
             text-align: left;
             margin-bottom: 1.5rem;
-            margin-left: 1rem;
+            margin-left: 0;
             opacity: 0;
             animation: slideInLeft 0.8s ease-out 0.2s forwards;
         }
@@ -336,7 +450,7 @@
             color: #666;
             margin-bottom: 1rem;
             line-height: 1.8;
-            margin-left: 1rem;
+            margin-left: 0;
             opacity: 0;
             animation: slideInLeft 0.8s ease-out 0.4s forwards;
         }
@@ -416,7 +530,7 @@
             align-items: center;
             justify-content: center;
             font-size: 6rem;
-            margin-right: 1rem;
+            margin-right: 0;
             overflow: hidden;
             position: relative;
             box-shadow: 0 20px 60px rgba(217, 70, 166, 0.3);
@@ -820,8 +934,9 @@
         </div>
     </section>
 
-    <section class="section container" id="sobre">
-        <div class="about-section">
+    <section class="section" id="sobre" style="padding: 0; background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);">
+        <div class="container" style="padding: 6rem 2rem;">
+            <div class="about-section">
             <div class="about-content">
                 <h3>SOBRE STUDIO DEPILEH</h3>
                 <h2>Excelência em Beleza desde 2024</h2>
@@ -1130,7 +1245,6 @@
     </script>
 </body>
 </html>
-
 
 
 
