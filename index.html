@@ -124,11 +124,12 @@
             height: 500px;
             background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
             border-radius: 50%;
+            pointer-events: none;
         }
 
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -405,6 +406,7 @@
             height: 200%;
             background: radial-gradient(circle, rgba(236, 72, 153, 0.05) 0%, transparent 70%);
             animation: rotate 20s linear infinite;
+            pointer-events: none;
         }
 
         @keyframes rotate {
@@ -555,6 +557,7 @@
             height: 200%;
             background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
             animation: shine 3s infinite;
+            pointer-events: none;
         }
 
         @keyframes shine {
@@ -736,6 +739,7 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.1);
+            pointer-events: none;
         }
 
         .carousel-slide > * {
@@ -842,6 +846,7 @@
             font-weight: 600;
             box-shadow: 0 8px 25px rgba(217, 70, 166, 0.3);
             transition: all 0.3s;
+            z-index: 1;
         }
 
         .btn-shine::before {
@@ -854,6 +859,7 @@
             background: rgba(255, 255, 255, 0.5);
             transform: skewX(-20deg);
             transition: 0.6s;
+            z-index: -1;
         }
 
         .btn-shine:hover::before {
@@ -928,7 +934,7 @@
         <div class="hero-content">
             <h1 class="title-glow">Sua Beleza em Primeiro Lugar</h1>
             <p>Unhas impecáveis, tratamentos premium e muito mais para você brilhar</p>
-            <button class="btn btn-shine" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+            <button class="btn-shine" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
                 Agende Agora
             </button>
         </div>
@@ -978,6 +984,7 @@
             <div class="about-image">
                 <img src="fotos/Depileh (1).png" alt="Studio Depileh">
             </div>
+        </div>
         </div>
     </section>
 
@@ -1245,6 +1252,7 @@
     </script>
 </body>
 </html>
+
 
 
 
